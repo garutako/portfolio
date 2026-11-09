@@ -1,0 +1,14 @@
+---
+import '@/styles/global.css';
+import fragShader from '@/shaders/sky.frag?raw';
+import vertShader from '@/shaders/sky.vert?raw';
+
+const canvasId = 'skyCanvas'
+---
+
+<canvas id={canvasId} class='absolute w-full h-full' data-frag={fragShader} data-vert={vertShader}></canvas>
+
+<script type="module">
+    import { loadShader } from '@/scripts/shader-loader';
+    loadShader('skyCanvas');
+</script>
